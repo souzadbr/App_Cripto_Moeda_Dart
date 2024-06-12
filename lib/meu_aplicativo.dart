@@ -14,7 +14,7 @@ class MeuAplicativo extends StatelessWidget {
         primarySwatch: Colors.indigo,
         appBarTheme: AppBarTheme(
           backgroundColor: Color.fromRGBO(114, 114, 173, 0.925), 
-         // titleTextStyle: TextStyle(color: Color.white, fontSize: 20),
+          titleTextStyle: TextStyle(color: Color.fromRGBO(255, 255, 255, 2), fontSize: 20),
         )
       ),
       home: const MoedasPage(),
