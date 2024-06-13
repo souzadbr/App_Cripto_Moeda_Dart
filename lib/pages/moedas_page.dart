@@ -19,14 +19,32 @@ class _MoedasPageState extends State<MoedasPage> {
     final NumberFormat real = NumberFormat.currency(locale: "pt_BR", name: "R\$");
     List<Moeda> selecionadas = [];
      
+    appBarDinamica() {
+      if(selecionadas.isEmpty) {
+        return AppBar(
+        title: Text("Cripto Moedas")
+      );
+      } else {
+        return AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              //acao de cancelar
+              setState(() {
+                selecionadas = []; 
+              });
+            },
+        ),
+      ); 
+      }
+      
+    }
+
+
   @override
   Widget build(BuildContext context) {
-
-    
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Cripto Moedas"),
-      ),
+      appBar: appBarDinamica(),
       body: ListView.separated(
         itemBuilder: (BuildContext context, int moeda) {
           return ListTile(
