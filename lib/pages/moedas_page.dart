@@ -35,9 +35,9 @@ class _MoedasPageState extends State<MoedasPage> {
               });
             },
         ),
+        title: Text("${selecionadas.length} selecionadas"),
       ); 
-      }
-      
+      } 
     }
 
 
