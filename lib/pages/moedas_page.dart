@@ -36,6 +36,9 @@ class _MoedasPageState extends State<MoedasPage> {
             },
         ),
         title: Text("${selecionadas.length} selecionadas"),
+        backgroundColor: Colors.pink[200],
+        elevation: 1,
+        iconTheme: IconThemeData(color: Colors.black87),
       ); 
       } 
     }
