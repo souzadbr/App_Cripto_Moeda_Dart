@@ -39,6 +39,7 @@ class _MoedasPageState extends State<MoedasPage> {
         backgroundColor: Colors.pink[200],
         elevation: 1,
         iconTheme: IconThemeData(color: Colors.black87),
+        
       ); 
       } 
     }
@@ -90,7 +91,21 @@ class _MoedasPageState extends State<MoedasPage> {
         padding: EdgeInsets.all(16),
         separatorBuilder: (_, __)=> Divider(), 
         itemCount: tabela.length,
-        
-        ));
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: selecionadas.isNotEmpty 
+         ? FloatingActionButton.extended(
+            onPressed: ( ) {}, 
+            icon: Icon(Icons.star),
+            label: Text(
+              "FAVORITAR",
+              style: TextStyle(
+                letterSpacing: 0,
+                fontWeight: FontWeight.bold
+              ),
+          )
+        )
+        : null, 
+      );
   }
 }
