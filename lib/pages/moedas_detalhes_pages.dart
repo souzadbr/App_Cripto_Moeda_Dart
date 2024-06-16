@@ -54,7 +54,7 @@ class _MoedasDetalhesPagesState extends State<MoedasDetalhesPages> {
           child: TextFormField(
             controller: _valor,
             style: TextStyle (fontSize: 22),
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
              border: OutlineInputBorder(),
              labelText: "Valor",
              prefixIcon: Icon(Icons.monetization_on_outlined), 
@@ -66,11 +66,12 @@ class _MoedasDetalhesPagesState extends State<MoedasDetalhesPages> {
             keyboardType: TextInputType.number,
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             validator: (value) {
-              if(value.isEmpty) {
+              if(value!.isEmpty) {
                 return "Informe valor da compra";
               } else if (double.parse(value) < 50) {
-                return "Compra minina é de R\$ 50 reais";
+                return "Compra minina é de R\$ 50,00";  
               }
+              return null;
             },
             )
           )
